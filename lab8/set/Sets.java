@@ -29,58 +29,79 @@ public class Sets {
 
     public static Set<Integer> intersection(Set<Integer> first, Set<Integer> second) {
         // TODO: Implement
-        Set<Integer> res = new HashSet<>();
-
-        return null;
+        Set<Integer> intersection = new LinkedHashSet<>(first);
+        intersection.retainAll(second);
+        return intersection;
     }
 
     public static Set<Integer> union(Set<Integer> first, Set<Integer> second) {
         // TODO: Implement
-        return null;
+        Set<Integer> union = new LinkedHashSet<>(first);
+        union.addAll(second);
+        return union;
     }
 
     public static List<Integer> toList(Set<Integer> source) {
-        // TODO: Implement
-        return null;
+        return new ArrayList<>(source);
     }
 
     public static List<Integer> removeDuplicates(List<Integer> source) {
-        // TODO: Implement
-        return null;
+        return new ArrayList<>(new LinkedHashSet<>(source));
     }
 
     public static List<Integer> removeDuplicatesManual(List<Integer> source) {
-        // TODO: Implement
-        return null;
+        List<Integer> removeDuplicates = new ArrayList<>();
+        int length = source.size();
+        for (int i = 0; i < length; i++) {
+            boolean check = false;
+            for (int j = 0; j < i; j++) {
+                if (source.get(i) == source.get(j)) {
+                    check = true;
+                }
+            }
+            if (!check) {
+                removeDuplicates.add(source.get(i));
+            }
+        }
+
+        return removeDuplicates;
     }
 
     public static String firstRecurringCharacter(String s) {
-        // TODO: Implement
+        Set<Character> recurring = new HashSet<>();
+        for (char c : s.toCharArray()) {
+            if (recurring.contains(c)) {
+                return String.valueOf(c);
+            }
+            recurring.add(c);
+        }
+
         return null;
     }
 
     public static Set<Character> allRecurringChars(String s) {
-        // TODO: Implement
-        return null;
+        Set<Character> allRecurringChars = new LinkedHashSet<>();
+        for (char c : s.toCharArray()) {
+            allRecurringChars.add(c);
+        }
+
+        return allRecurringChars;
     }
 
     public static Integer[] toArray(Set<Integer> source) {
-        // TODO: Implement
-        return null;
+        return source.toArray(new Integer[0]);
     }
 
     public static int getFirst(TreeSet<Integer> source) {
-        // TODO: Implement
-        return 0;
+        return source.getFirst();
     }
 
     public static int getLast(TreeSet<Integer> source) {
-        // TODO: Implement
-        return 0;
+        return source.getLast();
     }
 
     public static int getGreater(TreeSet<Integer> source, int value) {
-        // TODO: Implement
-        return 0;
+        Integer greater = source.higher(value);
+        return (greater != null) ? greater : Integer.MIN_VALUE;
     }
 }

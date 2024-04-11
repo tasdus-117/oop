@@ -18,7 +18,7 @@ public class PhoneBookList implements PhoneBook {
     }
     public Student searchByLastname(String lastname) {
         for ( int i = 0; i < phoneBook.size(); i++) {
-            if (phoneBook.get(i).name.equals(lastname)) {
+            if (phoneBook.get(i).lastname.equals(lastname)) {
                 return phoneBook.get(i);
             }
         }

@@ -7,7 +7,7 @@ public abstract class AbstractPoly implements Poly {
         double[] coefficients1 = coefficients();
         double[] res = new double[coefficients1.length - 1];
         for (int i = 1; i < coefficients1.length; i++) {
-            res[i - 1] = coefficients1[i] * i;
+            res[i - 1] = res[i] * i;
         }
         return res;
     }
@@ -17,6 +17,7 @@ public abstract class AbstractPoly implements Poly {
             return true;
         }
         if (!(o instanceof AbstractPoly)) {
+            return false;
         }
         AbstractPoly that = (AbstractPoly) o;
         double[] thisCoefficients = this.coefficients();

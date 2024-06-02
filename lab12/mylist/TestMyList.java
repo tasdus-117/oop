@@ -26,6 +26,9 @@ public class TestMyList {
         list.append(4.5);
         list.append(5.5);
         System.out.println("Data in my list: " + list.toString());
+        list.remove(2);
+        System.out.println(list.toString());
+        System.out.println(list.size());
 
         BasicStatistic basicStatistic = new BasicStatistic(list);
         System.out.println("Max data in my list: " + basicStatistic.max());
@@ -47,7 +50,7 @@ public class TestMyList {
          * Sử dụng BasicStatistic để tính các đại lượng thống kê cơ bản (max, min, kỳ vọng, phương sai).
          * In ra terminal các thông tin về dữ liệu và các đại lượng thống kê.
          */
-        MyLinkedList list = new MyLinkedList();
+        MyList list = new MyLinkedList();
         list.append(1.5);
         list.append(2.5);
         list.append(3.5);

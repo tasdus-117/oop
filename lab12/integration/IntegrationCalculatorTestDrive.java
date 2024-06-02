@@ -96,7 +96,7 @@ public class IntegrationCalculatorTestDrive {
         Integrator integrator1 = new MidpointRule(0.000001, 10000);
         IntegrationCalculator integrationCalculator = new IntegrationCalculator(integrator1, poly1);
         System.out.println("Poly1: " + poly1.toString());
-        System.out.println("MidpointRule: " + integrationCalculator.integrate(4, 5));
+        System.out.println("MidpointRule: " + integrationCalculator.integrate(-4, 5));
         System.out.println();
 
 
@@ -107,7 +107,7 @@ public class IntegrationCalculatorTestDrive {
 
         integrationCalculator.setIntegrator(new TrapezoidRule(0.000001, 10000));
         System.out.println("Poly1: " + poly1.toString());
-        System.out.println("TrapezoidRule: " + integrationCalculator.integrate(-6, 0));
+        System.out.println("TrapezoidRule: " + integrationCalculator.integrate(-4, 5));
         /*
          TODO
 

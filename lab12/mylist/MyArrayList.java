@@ -46,7 +46,6 @@ public class MyArrayList extends MyAbstractList {
             data[i] = data[i + 1];
         }
         size--;
-        data[size - 1] = null;
     }
 
     /**
@@ -77,7 +76,7 @@ public class MyArrayList extends MyAbstractList {
             enlarge();
         }
 
-        for (int i = size; i > index; i--) {
+        for (int i = size-1; i > index; i--) {
             data[i] = data[i - 1];
         }
         data[index] = payload;
